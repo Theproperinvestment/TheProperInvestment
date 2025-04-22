@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bot Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trading Server Dashboard <span id="status">(Simulated)</span></h1>
+
+        <!-- Callouts Section -->
+        <section class="card">
+            <h2>📢 Live Callouts</h2>
+            <div id="callout-log" class="log-box">
+                <!-- Callouts will be added here by JS -->
+                <p>Loading callouts...</p>
+            </div>
+            <!-- Optional: Form to simulate adding a callout (client-side only) -->
+            <!--
+            <form id="add-callout-form">
+                <input type="text" placeholder="SPY 415c @ 1.25 - stop 0.95 - target 1.75+" required>
+                <button type="submit">Log (Simulate)</button>
+            </form>
+             -->
+        </section>
+
+        <!-- Market Data Section -->
+        <section class="card">
+            <h2>📊 Market Data</h2>
+            <div class="data-lookup">
+                <input type="text" id="ticker-input" placeholder="Enter Ticker (e.g., AAPL)">
+                <button id="lookup-ticker-btn">Lookup</button>
+            </div>
+            <div id="ticker-info" class="info-box">
+                <!-- Ticker info will be displayed here -->
+                <p>Enter a ticker symbol above.</p>
+            </div>
+            <div id="flow-info" class="info-box">
+                <h3>Unusual Flow (Simulated for Ticker)</h3>
+                <ul id="flow-list">
+                    <li>No flow data loaded.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Briefings Section -->
+        <section class="card">
+            <h2>📰 Daily Briefings</h2>
+            <div id="premarket-briefing" class="briefing-box">
+                <h4>☀️ Pre-Market (8:30 AM ET)</h4>
+                <p>Loading...</p>
+            </div>
+            <div id="midday-update" class="briefing-box">
+                <h4>🕛 Midday Update</h4>
+                <p>Loading...</p>
+            </div>
+            <div id="eod-summary" class="briefing-box">
+                <h4>🌙 End of Day (4:00 PM ET)</h4>
+                <p>Loading...</p>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section class="card">
+            <h2>🔔 Active Alerts (Simulated)</h2>
+            <ul id="alert-list" class="log-box">
+                <!-- Alerts will be added here -->
+                <li>Loading alerts...</li>
+            </ul>
+             <!-- Optional: Form to simulate adding an alert -->
+            <form id="add-alert-form">
+                 <input type="text" id="alert-input" placeholder="e.g., SPY > 420" required>
+                 <button type="submit">Add Alert (Simulate)</button>
+             </form>
+        </section>
+
+         <!-- FAQ/Education Section -->
+        <section class="card">
+            <h2>📚 Education / FAQ</h2>
+            <div id="faq-content" class="info-box">
+                <p>Click a topic (Not interactive in this demo).</p>
+                <button class="faq-btn" data-topic="theta">!theta</button>
+                <button class="faq-btn" data-topic="risk">!riskreward</button>
+                <div id="faq-display" style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                    <!-- FAQ content appears here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Motivation Section -->
+        <section class="card">
+            <h2>💪 Motivation</h2>
+            <p id="quote-display" class="quote">Loading quote...</p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

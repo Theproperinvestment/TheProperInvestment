@@ -1,0 +1,171 @@
+:root {
+    --bg-color: #2c2f33; /* Dark Discord-like background */
+    --card-bg: #23272a;  /* Slightly lighter card background */
+    --text-color: #ffffff; /* White text */
+    --accent-color: #7289da; /* Discord blurple */
+    --green: #43b581;
+    --red: #f04747;
+    --border-color: #4f545c;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#status {
+    font-size: 0.7em;
+    color: #aaa;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Forms and Inputs */
+input[type="text"],
+button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    margin-right: 10px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1em;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #5f73bc;
+}
+
+button:last-child {
+    margin-right: 0;
+}
+
+form {
+    margin-top: 15px;
+}
+
+/* Display Boxes */
+.log-box,
+.info-box,
+.briefing-box {
+    background-color: #2f3136; /* Slightly different dark shade */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 10px;
+    min-height: 50px;
+    max-height: 250px; /* Prevent excessive height */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.log-box ul, #flow-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.log-box li, #flow-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.log-box li:last-child, #flow-list li:last-child {
+    border-bottom: none;
+}
+
+.callout-entry {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap on smaller screens */
+    padding: 10px 5px;
+    border-bottom: 1px dashed var(--border-color);
+}
+.callout-entry:last-child {
+    border-bottom: none;
+}
+
+.callout-entry span {
+    margin-right: 15px;
+    margin-bottom: 5px; /* Spacing when wrapped */
+}
+
+.callout-entry .ticker { font-weight: bold; color: var(--accent-color); }
+.callout-entry .entry { color: var(--text-color); }
+.callout-entry .stop { color: var(--red); }
+.callout-entry .target { color: var(--green); }
+.callout-entry .caller { font-style: italic; color: #aaa; font-size: 0.9em; }
+
+
+.briefing-box h4 {
+    border-bottom: none;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.quote {
+    font-style: italic;
+    color: #ccc;
+    text-align: center;
+    padding: 10px;
+}
+
+.data-lookup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#ticker-info strong {
+    color: var(--accent-color);
+}
+
+#flow-list .bullish { color: var(--green); }
+#flow-list .bearish { color: var(--red); }
+
+/* Basic Responsiveness */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    .container { padding: 5px; }
+    h1 { font-size: 1.5em; }
+    input[type="text"], button { width: calc(100% - 30px); margin-bottom: 10px; }
+    .data-lookup { flex-direction: column; align-items: stretch; }
+    .data-lookup input, .data-lookup button { margin-right: 0; width: 100%; box-sizing: border-box; }
+     .callout-entry { flex-direction: column; align-items: flex-start; }
+     .callout-entry span { margin-right: 0; }
+}
